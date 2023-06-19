@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-    <%@page import="Dao.PacienteDao"%>
-	<%@page import="Model.Paciente"%>
-	
-	<%
+<%@ page import="Dao.PacienteDao"%>
+<%
+	if (session.getAttribute("idpaciente") == null) {
+		response.sendRedirect("../");
+		System.out.println("deu ruim menoh");
+	} else {
 		
-		int idpaciente = (Integer)session.getAttribute("idpaciente");
 		PacienteDao pacienteDao = new PacienteDao();
-		Paciente paciente = pacienteDao.getPaciente(idpaciente);
-	
-	%>
+		pacienteDao.DeletePaciente(request.getParameter("n123"));
+		response.sendRedirect("../site.html");
+}
+%>

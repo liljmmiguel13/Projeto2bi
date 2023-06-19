@@ -36,14 +36,14 @@ package Dao;
  			
  		}
  		
- 		public void DeletePaciente(Paciente p) {
+ 		public void DeletePaciente(String idpaciente) {
  			
  			Conexao conn = null;
  			
  			try {
  				
  				conn = new Conexao();
- 				conn.executeUpdate("DELETE FROM paciente WHERE idpaciente = " + p.getIdpaciente() + ";");
+ 				conn.executeUpdate("DELETE FROM paciente WHERE idpaciente = " + idpaciente + ";");
  				
  				conn.fecharConexao();
  				

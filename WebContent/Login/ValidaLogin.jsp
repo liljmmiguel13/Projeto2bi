@@ -13,7 +13,7 @@
     			response.sendRedirect("../site.html");
     		}else {
     			session.setAttribute("idpaciente", paciente.getIdpaciente());
-    			response.sendRedirect("./RespostaLogin.jsp");
+    			response.sendRedirect("../site.html");
     			System.out.println("Deu certo!");
     		}
     	

@@ -27,7 +27,7 @@
 	%>
 	<script type="text/javascript">
 	alert("Paciente Cadastrado Com Sucesso! Agora preencha o Formulário de Saúde!");
-	window.location.href="Cadastro.jsp";
+	window.location.href="Form.html";
 	</script>
 	<%}else{ %>
 	<script type="text/javascript">

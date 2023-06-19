@@ -242,23 +242,10 @@ footer{
     <div class="main">
         <form action="">
         
-        <div class="Id_pessoal">
-            
-            <p>Identificação pessoal</p>
-            <p>Nome: <input type="text"></p>
-            <p>Sexo: <input type="radio" name="sexo" value="Masculino" required>Masculino     <input type="radio" name="sexo" value="Feminino">Feminino</p> 
-            <p>Data de Nascimento: <input type="date" name="dt" id="dt" required></p>
-            <p>Naturalidade: <input type="text" required></p>
-            <p>Estado: <input type="text" name="Estado" required></p>
-            <p>Cidade: <input type="text" name="Cidade" required></p>
-            <p>Telefone: <input type="tel" name="tel_pessoal" id="tel_pessoal" placeholder="(99)99999-9999" 
-                pattern="^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$" required> <br><small>Formato: (99)99999-9999</small></p>
-            <br>
-        </div>
-        <div class="Id_familiar">
+            <div class="Id_familiar">
             <p>Identificação Familiar</p>
-            <p>Nome do pai: <input type="text"></p>
-            <p>Nome da mãe: <input type="text"></p>
+            <p>Nome do pai: <input type="text" name="nome_pai"></p>
+            <p>Nome da mãe: <input type="text" name="nome_mae"></p>
             <p>Número de emergência: <input type="tel" name="tel_emerg" id="tel_emerg" placeholder="(99)99999-9999" 
                 pattern="^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$" required></p>
             <p>Tipo sanguíneo: <select name="tipo_sangue" id="tipo_sangue">
@@ -271,7 +258,6 @@ footer{
                                     <option value="O">O</option>
                                     <option value="O-">O-</option>
                                 </select></p>
-                            
         </div>
         
         <div id="form">
