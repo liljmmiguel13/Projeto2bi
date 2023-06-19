@@ -357,9 +357,9 @@ footer{
                 <input type="submit" id="entrar" value="Cadastrar">
             </form>
             
-            <form action="EditaCadastro.jsp" name="n123">
+            <form action="DeleteCadastro.jsp" >
             
-            	<input type="submit" id="entrar" value="Delete">
+            	<input type="submit" name="n123" id="entrar" value="1">
             
             </form>
             
