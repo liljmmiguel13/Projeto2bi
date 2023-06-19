@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiologia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+	
+	*{
+    margin: 0;
+    padding: 0;
+}
+body{
+  background-color: #191313;
+}
+.coluna p{
+font-family: Verdana;
+font-size: 25px;
+}
+.fade-in {
+    animation: fadeIn ease-in-out 6s;
+    -webkit-animation: fadeIn ease=ease-in-out 6s;
+    -moz-animation: fadeIn ease-in-out 6s;
+    -o-animation: fadeIn ease-in-out 6s;
+    -ms-animation: fadeIn ease-in-out 6s;
+}
+#text{
+    position: relative; 
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+.main{
+  background-attachment:fixed;
+    width: 100%;
+    background-color: #bbb;
+    background-image: url(Img/logo.gif);
+    background-position: center;
+    background-size: cover;
+    height: 109vh;
+    margin-top: 29px;
+    margin-bottom: 21px;
+}
+.navbar{
+  width: 98vw;
+  height: 75px;
+  margin: 0;
+  display: flex;
+  z-index: 20;
+  position: sticky;
+}
+.menu{
+  border: 1px solid;
+  position: fixed;
+  width: 100%;
+  align-content: space-around;
+  background-color: white;
+}
+
+.logo{
+  color: red;
+  font-size: 41px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding-top: 0.5%;
+  float: left;
+  display: flex;
+}
+.right{
+  float: right;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    background-color: white;
+    
+}
+li{
+    border-right: 1px solid #bbb;
+    float: left;
+}
+li a {
+  width: fit-content;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  li a:hover:not(.active) {
+    background-color: gray;
+  }
+  .active {
+    background-color: #C51919;
+  }
+a{
+ font-size: 30px;
+   width: 105px; 
+   height: 47px ;
+    display: block;
+    padding: 0;
+}
+  .botn_dir{
+    position: relative; top: 100px;left: -100px;
+    align-items: center;
+    flex-direction: column;
+    float: right;
+    background-color: rgb(13, 78, 151);
+    width: 320px;
+    border-radius: 10px;
+    display: flex;
+    color: white;
+    font-size: 30px;
+  }
+  .botn_esq{
+    position: relative; top: 100px;left: 100px;
+    align-items: center;
+    flex-direction: column;
+    float:left;
+    background-color: palevioletred;
+    width:320px ;
+    border-radius: 10px;
+    display: flex;
+    color: white;
+    font-size: 30px;
+  }
+  .intro{
+    background-color: #969696;
+    box-sizing: border-box;
+    float: left;
+  }
+  p.intro{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+  }
+  .text{
+    float: left;
+    padding-top: 4%;
+    padding-left: 10%;
+    width: 25%;
+    margin-left: 8.3%;
+  }
+  #card{
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+#a{
+  display: contents;
+}
+
+#algo{
+  position: relative; left: 80px;
+
+}
+footer{
+  background: #110c0b;
+  height: auto;
+  width: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 40px;
+  color: white;
+}
+.footer-content{
+  text-align: center;
+}
+.footer-content h3{
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 3rem;
+}
+.footer-content p{
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+}
+.socials{
+  background-color: #110c0b;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+.socials li{
+  color: black;
+}
+.socials a{
+  width: 6.6rem;
+  color: white;
+  text-decoration: none;
+}
+.socials a i{
+  font-size: 1.1rem;
+}
+.socials a:hover i{
+ color:aqua
+}
+.footer-bottom{
+  width: auto;
+  text-align: center;
+}
+.footer-bottom p{
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+.footer-bottom span{
+  text-transform: uppercase;
+  opacity: .4;
+  font-weight: 200;
+}
+@media screen and (max-width: 778px) {
+  .navbar{
+    flex-direction: column;
+  }
+    .menu{
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  .navbar-ul{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+    .icon{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo{
+      text-align: center;
+    }
+    .main{
+      margin-top: 75px;
+    }
+}
+	
+</style>
+
+<body>
+    <div class="navbar">
+        
+        <div class="menu fade-in"> 
+            <div class="icon">
+                <h2 class="logo fade-in">Cardiologia</h2>
+            </div>
+            <ul class="navbar-ul">
+            <li><a class="active" href="#">Home</a>  </li>
+            <li><a href="#">Agendamentos</a>  </li>
+            <li><a href="#">Serviços</a>  </li>
+            </ul>
+            <ul class="right">
+            <li><a href="Login/Login.jsp">Login</a>  </li>
+            <li><a href="Cadastro/Cadastro.jsp">Cadastro</a>  </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        
+        <Section>
+        <div class="coluna fade-in">
+            <a id="a"href="#" data-wpel-link="internal">
+            <div class="botn_esq">
+                <img src="Img/icon-convenios.png" alt="Convênios">
+                <p>Convênios</p>
+            </div> 
+            </a>
+            <a id="a"href="#">
+            <div class="botn_dir">
+                <img src="Img/icon-busca.png" alt="Busca">
+                <p>Busca de médicos</p>
+            </div>
+            </a>
+        </div>
+    </Section>
+    </div>
+      
+    <div class="intro">
+        <div class="text">
+        <h1 id="card">Cardiologia</h1><br>
+        <p class="intro">Cardiologia é a especialidade médica que cuida das doenças 
+            do coração e demais componentes do sistema circulatório. 
+            Somos referência em exames, diagnósticos e 
+            tratamentos cardiológicos de todos os tipos. 
+            Possuímos reconhecimento nacional e internacional 
+            do hospital pelo elevado padrão de excelência.
+            <br>
+            <br>
+            <br>
+                Estamos juntos com vocês no combate às doenças do 
+                coração e em todos os procedimentos necessários: 
+                prevenção, diagnóstico, tratamento, reabilitação 
+                e procedimentos complementares. 
+                Nossos processos internos são certificados pelos 
+                mais rigorosos órgãos de acreditação e 
+                controle de qualidade, contando inclusive com 
+                programas clínicos de Insuficiência Cardíaca e 
+                Infarto Agudo do Miocárdio certificados repetidas 
+                vezes pela Joint Comission International (JCI).
+            </p>
+    </div>
+    <img id="algo"src="Img/cardiologia-destaque.png" alt="abc">
+
+    </div>
+    <footer>
+       <div class="footer-content">
+        <h3>Sobre o Site</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit 
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+            occaecat cupidatat non proident, sunt in culpa qui officia 
+            deserunt mollit anim id est laborum</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+       </div>
+ <div class="footer-bottom">
+    <p>&copy;2023 Cardio. designed by <span>Rodrifer2004</span> Todos os direitos reservados</p>
+ </div>
+    </footer>
+    
+</body>
+</html>
