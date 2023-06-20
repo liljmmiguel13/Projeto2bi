@@ -83,7 +83,6 @@ body{
   border: 1px solid;
   position: fixed;
   width: 100%;
-  display: flex;
   align-content: space-around;
   background-color: white;
 }
@@ -92,13 +91,16 @@ body{
   font-size: 41px;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
-  padding-top: 4%;
+  padding-top: 0.5%;
+  float: left;
+  display: flex;
+}
+.right{
+  float: right;
 }
 ul{
     list-style-type: none;
     margin: 0;
-    position: relative; left:0,9px;
-    overflow: hidden;
     background-color: white;
     
 }
@@ -165,6 +167,7 @@ footer{
   color: black;
 }
 .socials a{
+  width: 6.6rem;
   color: white;
   text-decoration: none;
 }
@@ -234,6 +237,9 @@ footer{
             <li><a href="site.html">Home</a>  </li>
             <li><a href="#">Agendamentos</a>  </li>
             <li><a href="#">Serviços</a>  </li>
+            <li><a href="consulta.html">Consulta</a>  </li>
+           </ul> 
+           <ul class="right">
             <li><a href="login.html">Login</a>  </li>
             <li><a href="cadastro.html">Cadastro</a>  </li>
         </ul>
