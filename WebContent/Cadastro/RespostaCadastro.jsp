@@ -18,6 +18,10 @@
     paciente.setCidade(request.getParameter("cidade"));
     paciente.setEstado(request.getParameter("estado"));
     paciente.setTelefone(request.getParameter("telefone"));
+    paciente.setNome_pai(request.getParameter("nome_pai"));
+    paciente.setNome_mae(request.getParameter("nome_mae"));
+    paciente.setTelefone_emergencia(request.getParameter("telefone_emergencia"));
+    paciente.setTipo_sangue(request.getParameter("tipo_sangue"));
     
 	PacienteDao pacienteDao = new PacienteDao();
 	ok = pacienteDao.InserirPaciente(paciente);
@@ -27,7 +31,7 @@
 	%>
 	<script type="text/javascript">
 	alert("Paciente Cadastrado Com Sucesso! Agora preencha o Formulário de Saúde!");
-	window.location.href="Form.html";
+	window.location.href="../site.html";
 	</script>
 	<%}else{ %>
 	<script type="text/javascript">

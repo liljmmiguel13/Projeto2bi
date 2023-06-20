@@ -9,11 +9,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Login - Portal do paciente</title>
+    </head>
     
     <style>
     *{
     margin: 0;
     padding: 0;
+}
+.page-container{
+  position: relative;
+  min-height: 100vh;
+}
+.content-wrap{
+  padding-bottom: 6.5rem;
 }
 body{
   background-color: #bbb;
@@ -250,7 +258,6 @@ footer{
   }
     </style>
     
-</head>
 <body>
     <div class="navbar">
         <div class="menu"> 
@@ -261,13 +268,14 @@ footer{
              <nav>
                 <ul class="navbar-ul">
                 <li><a href="../site.html">Home</a>  </li>
-                <li><a href="#">Agendamentos</a>  </li>
+                <li><a href="../Agendamentos/Agendamentos.html">Agendamentos</a>  </li>
                 <li><a href="#">Serviços</a>  </li>
+                <li><a href="../Consulta/Consulta.html">Consulta</a>  </li>
                 </ul>
                 </nav>
                 <ul class="right">
                 <li><a class="active" href="Login.jsp">Login</a>  </li>
-                <li><a href="../Cadastro/Cadastro.jsp">Cadastro</a>  </li>
+                <li><a  href="../Cadastro/Cadastro.jsp">Cadastro</a>  </li>
                 </ul>
         </div>
     </div>
@@ -280,7 +288,7 @@ footer{
                 </div>
                 <div class="l_email">
                     <label for="e-mail" class="login_text"><b>E-mail:</b></label>
-                <input type="text" class="login_email" name="email" required><br>
+                <input type="email" class="login_email" name="email" required><br>
                 </div>
                 <div class="l_senha">
                     <label for="senha" class="login_text"><b>Senha:</b> </label>

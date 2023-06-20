@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Cadastro - Portal do Paciente</title>
+    </head>
     <script>
         function ValidaSenha(){
             const senha = document.querySelector('input[name=senha]');
@@ -31,6 +32,13 @@
     *{
     margin: 0;
     padding: 0;
+}
+.page-container{
+  position: relative;
+  min-height: 100vh;
+}
+.content-wrap{
+  padding-bottom: 6.5rem;
 }
 body{
   background-color: #bbb;
@@ -223,6 +231,9 @@ footer{
 .child_non_text{
   margin: 10px; 
 }
+.child_non_text p{
+  display: ruby;
+}
   .login_text{
     font-family: Arial, Helvetica, sans-serif;
   }
@@ -271,23 +282,22 @@ footer{
   }
     </style>
     
-</head>
+
 <body>
     <div class="navbar">
         <div class="menu"> 
             <div class="icon">
                 <h2 class="logo">Cardiologia</h2>
             </div>
-
             <ul class="navbar-ul">
-            <li><a href="../site.html">Home</a>  </li>
-            <li><a href="#">Agendamentos</a>  </li>
-            <li><a href="#">Serviços</a>  </li>
+           	<li><a href="../site.html">Home</a>  </li>
+            	<li><a href="../Agendamentos/Agendamentos.html">Agendamentos</a>  </li>
+            	<li><a href="#">Serviços</a>  </li>
+            	<li><a href="../Consulta/Consulta.html">Consulta</a>  </li>
             </ul>
-            
             <ul class="right">
-            <li><a href="../Login/Login.jsp">Login</a>  </li>
-            <li><a class="active" href="Cadastro.jsp">Cadastro</a>  </li>
+            	<li><a href="../Login/Login.jsp">Login</a>  </li>
+            	<li><a class="active" href="Cadastro.jsp">Cadastro</a>  </li>
             </ul>
         </div>
     </div>
@@ -301,7 +311,7 @@ footer{
 
                 <div class="c_border">
                     <label for="email" class="login_text"><b>E-mail:</b></label>
-                    <input type="text" class="cadastro_input" name="email" required><br>
+                    <input type="email" class="cadastro_input" name="email" required><br>
                 </div>
 
                 <div class="c_border">
@@ -352,6 +362,25 @@ footer{
                     <input type="tel" class="c_tel" name="telefone" id="telefone" placeholder="(99)99999-9999" 
                     pattern="^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$" required>
                 </div>
+                
+                <div class="Id_familiar">
+            <p>Identificação Familiar</p>
+            <p>Nome do pai: <input type="text" name="nome_pai"></p>
+            <p>Nome da mãe: <input type="text" name="nome_mae"></p>
+            <p>Número de emergência: <input type="tel" name="telefone_emergencia" id="tel_emerg" placeholder="(99)99999-9999" 
+                pattern="^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$" required></p>
+            <p>Tipo sanguíneo: <select name="tipo_sangue" id="tipo_sangue">
+                                    <option value="A">A</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B">B</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB">AB</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O">O</option>
+                                    <option value="O-">O-</option>
+                                </select></p>
+        		</div>
+                
 				<a id="jatem" href="../Login/Login.jsp"> Já tem um conta? Então clique aqui!</a>
                     <br><br><br><br>
                 <input type="submit" id="entrar" value="Cadastrar">
@@ -359,7 +388,7 @@ footer{
             
             <form action="DeleteCadastro.jsp" >
             
-            	<input type="submit" name="n123" id="entrar" value="1">
+            	<input type="submit" name="n123" id="entrar" value="2">
             
             </form>
             
