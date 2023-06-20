@@ -12,13 +12,16 @@
 	private String cidade;
 	private String estado;
 	private String telefone;
-	private int codigo_info;
+	private String nome_pai;
+	private String nome_mae;
+	private String telefone_emergencia;
+	private String tipo_sangue;
 	
 	public Paciente() {
 		
 	}
 	
-	public Paciente (String email, String senha, String nome, String sexo, String dt_nascimento, String nacionalidade, String cidade, String estado, String telefone, int codigo_info) {
+	public Paciente (String email, String senha, String nome, String sexo, String dt_nascimento, String nacionalidade, String cidade, String estado, String telefone, String nome_pai, String nome_mae, String telefone_emergencia, String tipo_sangue) {
 		setEmail(email);
 		setSenha(senha);
 		setNome(nome);
@@ -28,10 +31,13 @@
 		setCidade(cidade);
 		setEstado(estado);
 		setTelefone(telefone);
-		setCodigo_info(codigo_info);
+		setNome_pai(nome_pai);
+		setNome_mae(nome_mae);
+		setTelefone_emergencia(telefone_emergencia);
+		setTipo_sangue(tipo_sangue);
 		
 	}
-	public Paciente (int idpaciente, String email, String senha, String nome, String sexo, String dt_nascimento, String nacionalidade, String cidade, String estado, String telefone, int codigo_info) {
+	public Paciente (int idpaciente, String email, String senha, String nome, String sexo, String dt_nascimento, String nacionalidade, String cidade, String estado, String telefone, String nome_pai, String nome_mae, String telefone_emergencia, String tipo_sangue) {
 		setIdpaciente(idpaciente);
 		setEmail(email);
 		setSenha(senha);
@@ -42,11 +48,45 @@
 		setCidade(cidade);
 		setEstado(estado);
 		setTelefone(telefone);
-		setCodigo_info(codigo_info);
+		setNome_pai(nome_pai);
+		setNome_mae(nome_mae);
+		setTelefone_emergencia(telefone_emergencia);
+		setTipo_sangue(tipo_sangue);
 		
 	}
 	
-	
+	public String getNome_pai() {
+		return nome_pai;
+	}
+
+	public void setNome_pai(String nome_pai) {
+		this.nome_pai = nome_pai;
+	}
+
+	public String getNome_mae() {
+		return nome_mae;
+	}
+
+	public void setNome_mae(String nome_mae) {
+		this.nome_mae = nome_mae;
+	}
+
+	public String getTelefone_emergencia() {
+		return telefone_emergencia;
+	}
+
+	public void setTelefone_emergencia(String telefone_emergencia) {
+		this.telefone_emergencia = telefone_emergencia;
+	}
+
+	public String getTipo_sangue() {
+		return tipo_sangue;
+	}
+
+	public void setTipo_sangue(String tipo_sangue) {
+		this.tipo_sangue = tipo_sangue;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -127,16 +167,6 @@
 
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
-	}
-
-	public int getCodigo_info() {
-		return codigo_info;
-	}
-
-	public void setCodigo_info(int codigo_info) {
-		this.codigo_info = codigo_info;
-	}
-	
-	
+	}	
 	
 }
