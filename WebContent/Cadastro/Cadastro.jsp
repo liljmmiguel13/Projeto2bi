@@ -107,7 +107,7 @@ a{
        display: block;
        padding: 0;
 }
-   #esquec{
+   #jatem{
 font-size: medium;
 display: contents;
 }  
@@ -289,14 +289,14 @@ footer{
                 <h2 class="logo">Cardiologia</h2>
             </div>
             <ul class="navbar-ul">
-           	<li><a href="site.html">Home</a>  </li>
-            	<li><a href="agendamentos.html">Agendamentos</a>  </li>
+           	<li><a href="../site.html">Home</a>  </li>
+            	<li><a href="../Agendamentos/Agendamentos.html">Agendamentos</a>  </li>
             	<li><a href="#">Serviços</a>  </li>
-            	<li><a href="consulta.html">Consulta</a>  </li>
+            	<li><a href="../Consulta/Consulta.html">Consulta</a>  </li>
             </ul>
             <ul class="right">
-            	<li><a href="login.html">Login</a>  </li>
-            	<li><a class="active" href="cadastro.html">Cadastro</a>  </li>
+            	<li><a href="../Login/Login.jsp">Login</a>  </li>
+            	<li><a class="active" href="Cadastro.jsp">Cadastro</a>  </li>
             </ul>
         </div>
     </div>
@@ -361,6 +361,25 @@ footer{
                     <input type="tel" class="c_tel" name="telefone" id="telefone" placeholder="(99)99999-9999" 
                     pattern="^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$" required>
                 </div>
+                
+                <div class="Id_familiar">
+            <p>Identificação Familiar</p>
+            <p>Nome do pai: <input type="text" name="nome_pai"></p>
+            <p>Nome da mãe: <input type="text" name="nome_mae"></p>
+            <p>Número de emergência: <input type="tel" name="telefone_emergencia" id="tel_emerg" placeholder="(99)99999-9999" 
+                pattern="^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$" required></p>
+            <p>Tipo sanguíneo: <select name="tipo_sangue" id="tipo_sangue">
+                                    <option value="A">A</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B">B</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB">AB</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O">O</option>
+                                    <option value="O-">O-</option>
+                                </select></p>
+        		</div>
+                
 				<a id="jatem" href="../Login/Login.jsp"> Já tem um conta? Então clique aqui!</a>
                     <br><br><br><br>
                 <input type="submit" id="entrar" value="Cadastrar">
@@ -368,7 +387,7 @@ footer{
             
             <form action="DeleteCadastro.jsp" >
             
-            	<input type="submit" name="n123" id="entrar" value="1">
+            	<input type="submit" name="n123" id="entrar" value="2">
             
             </form>
             
