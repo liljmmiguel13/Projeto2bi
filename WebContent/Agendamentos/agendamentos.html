@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/agendamentos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Agendamentos</title>
+    <script>
+        function EscolhePresencial(){
+            const presencial = document.getElementById("lugar");
+            presencial.removeAttribute('disabled');
+        }
+        function EscolheOnline(){
+            const online = document.getElementById("lugar");
+            online.setAttribute('disabled','');
+        }
+        function EscolheBelem(){
+            const button1 = document.getElementById("presencial");
+            const button2 = document.getElementById("online");
+            button1.removeAttribute('disabled')
+            button2.removeAttribute('disabled')
+            document.getElementById("Escolhelugar").innerHTML="";
+            document.getElementById("Escolhelugar").innerHTML+="<select name='lugar_belem' required id='lugar'><option selected hidden value=''>Locais</option><option value='Dr. Rodrigo Souza Cardiologista Belem'>Dr. Rodrigo Souza Cardiologista Belém - R. Ferreira Pena, 417 - Umarizal, Belém - PA, 66050-140</option><option value='Centrocor Clínica de Cardiologia'>Centrocor Clínica de Cardiologia - Av. Duque de Caxias, 724 - Marco, Belém - PA, 66090-250</option><option value='Clínica Recardio'>Clínica Recardio - Av. Rômulo Maiorana, 916 - Marco, Belém - PA, 66093-672</option><option value='Clínica Harada'>Clínica Harada - Tv. Nove de Janeiro, 628 - Fátima, Belém - PA, 66060-370</option><option value='CCI Belém'>CCI Belém - Clínica de Cardiologia - Av. Duque de Caxias, 1075 - Marco, Belém - PA, 66093-029</option></select>";
+            document.getElementById("medico").innerHTML="";
+            document.getElementById("medico").innerHTML+="<select name='medico' id='med_belem'><option selected hidden value=''>Médicos:</option><option value='Dr. Fernando de Loureiro'>Dr. Fernando de Loureiro - USP 2006</option><option value='Dr. Fernando de Loureiro'>Dra. Maria Neves de Castro - UFPA 2002</option><option value='Dr. Fernando de Loureiro'>Dr. André Pacheco - UFPA 2005</option><option value='Dr. Fernando de Loureiro'>Dr. Murilo Conde da Luz - FDT 2072</option></select>";
+            document.querySelector('input[name="tipo_consulta"]:checked').checked = false;
+
+        }
+        function EscolheAnanindeua(){
+            const button1 = document.getElementById("presencial");
+            const button2 = document.getElementById("online");
+            button1.removeAttribute('disabled')
+            button2.removeAttribute('disabled')
+            document.getElementById("Escolhelugar").innerHTML="";
+            document.getElementById("Escolhelugar").innerHTML="<select name='lugar_ananindeua' required id='lugar'><option selected hidden value=''>Locais</option><option value='Minha Consulta'>Minha Consulta - Formosa Cidade Nova - Tv SN 17, Conjunto Cidade Nova IV 1o Andar - Coqueiro, Ananindeua - PA, 67133-520</option><option value='Clínica Fênix'>Clínica Fênix - Av. Cláudio Sanders, 265 - Centro, Ananindeua - PA, 67030-325</option><option value='Clínica Dr Vitor de Holanda'>Clínica Dr Vitor de Holanda - Av. Cláudio Sanders, 333 D - Centro, Ananindeua - PA, 67000-000</option><option value='Clínica Odara'>Clínica Odara - Av. Três Corações, 41 - Coqueiro, Ananindeua - PA, 67130-850</option></select>";
+            document.getElementById("medico").innerHTML="";
+            document.getElementById("medico").innerHTML+="<select required name='medico' id='med_belem'><option selected hidden value=''>Médicos:</option><option value='Dra. Nathielly de Castro Neves'>Dra. Nathielly de Castro Neves - UEPA 2009</option><option value='Dra. Rosalba Nascimento'>Dra. Rosalba Nascimento - UFPA 2000</option><option value='Dr. Edson de Souza'>Dr. Edson de Souza - Cesupa 2005</option><option value='Dra. Gracielma Rosa'>Dra. Gracielma Rosa - Cesupa 2003</option></select>";
+            document.querySelector('input[name="tipo_consulta"]:checked').checked = false;
+        }
+    </script>
+</head>
+<body>
+    <div class="page-container">
+        <div class="content-wrap">
+    <div class="navbar">
+        
+        <div class="menu"> 
+            <div class="icon">
+                <h2 class="logo">Cardiologia</h2>
+            </div>
+            <ul class="navbar-ul">
+                <li><a href="site.html">Home</a>  </li>
+                <li><a class="active" href="agendamentos.html">Agendamentos</a>  </li>
+                <li><a href="#">Serviços</a>  </li>
+                <li><a href="consulta.html">Consulta</a>  </li>
+            </ul>
+            <ul class="right">
+                <li><a href="login.html">Login</a>  </li>
+                <li><a href="cadastro.html">Cadastro</a>  </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <h1>Consulta</h1>
+        <form action="">
+            <div class="cons_data">
+                <h2>Data</h2>
+                <select name="ano" required>
+                    <option selected hidden value="">Ano: </option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                </select>
+                <div class="mes">
+                    <select name="mes" required>
+                        <option selected hidden value="">Mês: </option>
+                        <option value="Janeiro">Janeiro</option>
+                        <option value="Fevereiro">Fevereiro</option>
+                        <option value="Marco">Março</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Maio">Maio</option>
+                        <option value="Junho">Junho</option>
+                        <option value="Julho">Julho</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Setembro">Setembro</option>
+                        <option value="Outubro">Outubro</option>
+                        <option value="Novembro">Novembro</option>
+                        <option value="Dezembro">Dezembro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="cons_endereco" >
+                <h2>Endereço</h2>
+                <input type="radio" name="lugar" onchange="EscolheBelem()" value="Belem" required>Belém <input type="radio" name="lugar" onchange="EscolheAnanindeua()" value="Ananindeua" required>Ananindeua
+                <div id="Escolhelugar">
+                    <select disabled name="" id="">
+                        <option value="">Locais </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="cons_medico">
+                <h2>Médicos</h2>
+                <div id="medico">
+                    <select disabled name="" id="">
+                        <option value="">Médicos: </option>
+                    </select>
+                </div>
+            </div>
+            <div class="tipo_consulta">
+                <input type="radio" name="tipo_consulta" disabled required id="presencial" onchange="EscolhePresencial()"value="presencial">Presencial <input type="radio" id="online" disabled required name="tipo_consulta" onchange="EscolheOnline()" value="online">Online
+            </div>
+            <input type="submit" value="marcar consulta">
+    </div>
+</div>
+    <footer>
+       <div class="footer-content">
+        <h3>Sobre o Site</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit 
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+            occaecat cupidatat non proident, sunt in culpa qui officia 
+            deserunt mollit anim id est laborum</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+       </div>
+ <div class="footer-bottom">
+    <p>&copy;2023 Cardio. designed by <span>Rodrifer2004</span> Todos os direitos reservados</p>
+ </div>
+    </footer>
+</div>
+</body>
+</html>
