@@ -16,12 +16,12 @@
             const confirma = document.querySelector('input[name=confirma]');
             if(senha.value === confirma.value){
                 document.getElementById('resultado').style.color = "#008B45";
-                document.getElementById('resultado').innerHTML = "As senhas s„o iguais";
+                document.getElementById('resultado').innerHTML = "As senhas s√£o iguais";
                 confirma.setCustomValidity('');
             }else{
                 document.getElementById('resultado').style.color = "#FF6347";
-                document.getElementById('resultado').innerHTML = "as senhas n„o correspondem";
-                confirma.setCustomValidity('as senhas n„o correspondem');
+                document.getElementById('resultado').innerHTML = "as senhas n√£o correspondem";
+                confirma.setCustomValidity('as senhas n√£o correspondem');
             }
         }
         
@@ -31,6 +31,13 @@
     *{
     margin: 0;
     padding: 0;
+}
+.page-container{
+  position: relative;
+  min-height: 100vh;
+}
+.content-wrap{
+  padding-bottom: 6.5rem;
 }
 body{
   background-color: #bbb;
@@ -100,7 +107,7 @@ a{
        display: block;
        padding: 0;
 }
-   #jatem{
+   #esquec{
 font-size: medium;
 display: contents;
 }  
@@ -223,6 +230,9 @@ footer{
 .child_non_text{
   margin: 10px; 
 }
+.child_non_text p{
+  display: ruby;
+}
   .login_text{
     font-family: Arial, Helvetica, sans-serif;
   }
@@ -278,16 +288,15 @@ footer{
             <div class="icon">
                 <h2 class="logo">Cardiologia</h2>
             </div>
-
             <ul class="navbar-ul">
-            <li><a href="../site.html">Home</a>  </li>
-            <li><a href="#">Agendamentos</a>  </li>
-            <li><a href="#">ServiÁos</a>  </li>
+           	<li><a href="site.html">Home</a>  </li>
+            	<li><a href="agendamentos.html">Agendamentos</a>  </li>
+            	<li><a href="#">Servi√ßos</a>  </li>
+            	<li><a href="consulta.html">Consulta</a>  </li>
             </ul>
-            
             <ul class="right">
-            <li><a href="../Login/Login.jsp">Login</a>  </li>
-            <li><a class="active" href="Cadastro.jsp">Cadastro</a>  </li>
+            	<li><a href="login.html">Login</a>  </li>
+            	<li><a class="active" href="cadastro.html">Cadastro</a>  </li>
             </ul>
         </div>
     </div>
@@ -301,7 +310,7 @@ footer{
 
                 <div class="c_border">
                     <label for="email" class="login_text"><b>E-mail:</b></label>
-                    <input type="text" class="cadastro_input" name="email" required><br>
+                    <input type="email" class="cadastro_input" name="email" required><br>
                 </div>
 
                 <div class="c_border">
@@ -352,7 +361,7 @@ footer{
                     <input type="tel" class="c_tel" name="telefone" id="telefone" placeholder="(99)99999-9999" 
                     pattern="^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$" required>
                 </div>
-				<a id="jatem" href="../Login/Login.jsp"> J· tem um conta? Ent„o clique aqui!</a>
+				<a id="jatem" href="../Login/Login.jsp"> J√° tem um conta? Ent√£o clique aqui!</a>
                     <br><br><br><br>
                 <input type="submit" id="entrar" value="Cadastrar">
             </form>
