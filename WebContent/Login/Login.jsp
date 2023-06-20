@@ -15,6 +15,13 @@
     margin: 0;
     padding: 0;
 }
+.page-container{
+  position: relative;
+  min-height: 100vh;
+}
+.content-wrap{
+  padding-bottom: 6.5rem;
+}
 body{
   background-color: #bbb;
 }
@@ -260,14 +267,15 @@ footer{
 
              <nav>
                 <ul class="navbar-ul">
-                <li><a href="../site.html">Home</a>  </li>
-                <li><a href="#">Agendamentos</a>  </li>
-                <li><a href="#">ServiÁos</a>  </li>
+                <li><a href="site.html">Home</a>  </li>
+                <li><a href="agendamentos.html">Agendamentos</a>  </li>
+                <li><a href="#">Servi√ßos</a>  </li>
+                <li><a href="consulta.html">Consulta</a>  </li>
                 </ul>
                 </nav>
                 <ul class="right">
-                <li><a class="active" href="Login.jsp">Login</a>  </li>
-                <li><a href="../Cadastro/Cadastro.jsp">Cadastro</a>  </li>
+                <li><a class="active" href="login.html">Login</a>  </li>
+                <li><a  href="cadastro.html">Cadastro</a>  </li>
                 </ul>
         </div>
     </div>
@@ -280,13 +288,13 @@ footer{
                 </div>
                 <div class="l_email">
                     <label for="e-mail" class="login_text"><b>E-mail:</b></label>
-                <input type="text" class="login_email" name="email" required><br>
+                <input type="email" class="login_email" name="email" required><br>
                 </div>
                 <div class="l_senha">
                     <label for="senha" class="login_text"><b>Senha:</b> </label>
                 <input type="password"  class="login_senha" name="senha" required><br>
                 </div>
-                <a id="esquec" href="../Cadastro/Cadastro.jsp"> Esqueceu sua senha? Ent„o faz tudo de novo ai kkk</a><br> <br>
+                <a id="esquec" href="../Cadastro/Cadastro.jsp"> Esqueceu sua senha? Ent√£o faz tudo de novo ai kkk</a><br> <br>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Lembre de mim
                 </label>
