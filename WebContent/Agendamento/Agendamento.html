@@ -159,6 +159,58 @@ footer{
   opacity: .4;
   font-weight: 200;
 }
+.agendamento{
+      height: auto;
+    background-color: white;
+    position: relative;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+    }
+    .cons_data{
+      background-color: aliceblue;
+      border-radius: 15px;
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+    }
+    .cons_morada{
+      background-color: aliceblue;
+      border-radius: 15px;
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+    }
+    .cons_clinica{
+      background-color: aliceblue;
+      border-radius: 15px;
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+    }
+    .cons_medico{
+      background-color: aliceblue;
+      border-radius: 15px;
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+    }
 @media screen and (max-width: 778px) {
   .navbar{
     flex-direction: column;
@@ -184,6 +236,7 @@ footer{
     .main{
       margin-top: 75px;
     }
+    
 }
     </style>
 <body>
@@ -208,14 +261,10 @@ footer{
         </div>
     </div>
     <div class="main">
+      <div class="agendamento">
         <h1>Agendamentos</h1>
         <form action="RespostaAgendamento.jsp" method="post">
-            <div class="cons_data">
-                <h2>Data</h2>
-                <div class="">
-                <label><b>Data: </b> </label>
-                <input type="date" name="data" required> <br>
-            </div>
+            <div class="cons_info">
 
             <div class="cons_morada" >
                 <h2>Seu Local de Morada</h2>
@@ -257,12 +306,19 @@ footer{
             	
                 
             </div>
+            <div class="cons_data">
+              <h2>Data</h2>
+            <label><b>Data: </b> </label>
+            <input type="date" name="data" required> <br>
+        </div>
+
             </div>
             <div class="tipo_consulta">
                 <input type="radio" name="tipo_atendimento" value="presencial">Presencial<input type="radio" name="tipo_atendimento" value="online">Online
             </div>
             <input type="submit" value="Marcar Consulta">
             </form>
+      </div>
     </div>
 </div>
     <footer>
