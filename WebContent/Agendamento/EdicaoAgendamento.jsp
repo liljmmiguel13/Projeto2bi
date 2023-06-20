@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+    
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -208,8 +212,8 @@ footer{
         </div>
     </div>
     <div class="main">
-        <h1>Agendamentos</h1>
-        <form action="RespostaAgendamento.jsp" method="post">
+        <h1>Editar Consulta</h1>
+        <form action="EditaAgendamento.jsp" method="post">
             <div class="cons_data">
                 <h2>Data</h2>
                 <div class="">
@@ -261,7 +265,7 @@ footer{
             <div class="tipo_consulta">
                 <input type="radio" name="tipo_atendimento" value="presencial">Presencial<input type="radio" name="tipo_atendimento" value="online">Online
             </div>
-            <input type="submit" value="Marcar Consulta">
+            <input type="submit" value="Editar Consulta">
             </form>
     </div>
 </div>

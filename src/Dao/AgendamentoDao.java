@@ -14,12 +14,13 @@ package Dao;
 			try {
 				
 				conn = new Conexao();
-				conn.executeUpdate("INSERT INTO agendamento(data, localMorada, clinica, medico, tipo_atendimento) VALUES (" +
+				conn.executeUpdate("INSERT INTO agendamento(data, localMorada, clinica, medico, tipo_atendimento, idpaciente) VALUES (" +
 						"'" + a.getData() + "',"  
 						+ "'" + a.getLocalMorada() + "',"
 						+ "'"+ a.getClinica() + "',"
 						+ "'" + a.getMedico() + "'," 
-						+ "'" + a.getTipo_atendimento() + "');");
+						+ "'" + a.getTipo_atendimento() + "'," 
+						+ "'" + a.getIdpaciente() + "');");
 					
 					conn.fecharConexao();
 				
@@ -39,7 +40,7 @@ package Dao;
 			try {
 				
 				conn = new Conexao();
-				conn.executeUpdate("DELETE FROM idagendamento WHERE idagendamento = " + idagendamento + ";");
+				conn.executeUpdate("DELETE FROM agendamento WHERE idagendamento = " + idagendamento + ";");
 				
 				conn.fecharConexao();
 				
@@ -50,16 +51,41 @@ package Dao;
 			
 		}
 		
-		public ResultSet ExcuteQuery(Agendamento a) {
+		public Agendamento getAgendamento(int idagendamento) {
+			Conexao conn = null;
+ 			
+ 			try {
+ 				
+ 				conn = new Conexao();
+ 				ResultSet rs = conn.executeQuery("SELECT * FROM agendamento WHERE idagendamento = " + idagendamento + ";");
+ 				
+ 				if(rs.next()) {
+ 					return new Agendamento(
+ 							rs.getInt("idagendamento"),
+ 							rs.getString("data"),
+ 							rs.getString("localMorada"),
+ 							rs.getString("clinica"),
+ 							rs.getString("medico"),
+ 							rs.getString("tipo_atendimento"),
+ 							rs.getInt("idpaciente"));
+ 				}else {
+ 					return null;
+ 				}
+ 				
+ 			} catch(SQLException e) {
+ 				
+ 				return null;
+ 			}
+		}
+		
+		public ResultSet ExcuteQuery(int idpaciente) {
  			
  			Conexao conn = null;
  			
  			try {
  				
  				conn = new Conexao();
- 				ResultSet rs = conn.executeQuery("SELECT * FROM agendamento(data, localMorada, clinica, medico, tipo_atendimento) WHERE idagendamento = " + a.getIdagendamento() + ";");
- 				
- 				conn.fecharConexao();
+ 				ResultSet rs = conn.executeQuery("SELECT * FROM agendamento WHERE idpaciente = " + idpaciente + ";");
  				
  				return rs;
  				
@@ -77,13 +103,16 @@ package Dao;
  			try {
  				
  				conn = new Conexao();
- 				conn.executeUpdate("UPDATE agendamento SET"
- 						+ "'data' = " + a.getData() + ","
- 						+ "'localMorada' = " + a.getLocalMorada() + ","
- 			 			+ "'clinica' = " + a.getClinica() + ","
- 						+ "'medico' = " + a.getMedico() + ","
- 						+ "'tipo_atendimento' = " + a.getTipo_atendimento() +
- 						"WHERE idagendamento = " + a.getIdagendamento() + ";");
+ 				String sql = "UPDATE agendamento SET "
+ 						+ "data = '" + a.getData() + "',"
+ 						+ "localMorada = '" + a.getLocalMorada() + "',"
+ 			 			+ "clinica = '" + a.getClinica() + "',"
+ 						+ "medico = '" + a.getMedico() + "',"
+ 						+ "tipo_atendimento = '" + a.getTipo_atendimento() +
+ 						"' WHERE idagendamento = " + a.getIdagendamento() + ";";
+ 				
+ 				System.out.println(sql);
+ 				conn.executeUpdate(sql);
  						
  				conn.fecharConexao();
  				

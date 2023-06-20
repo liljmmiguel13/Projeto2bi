@@ -291,9 +291,9 @@ footer{
             </div>
             <ul class="navbar-ul">
            	<li><a href="../site.html">Home</a>  </li>
-            	<li><a href="../Agendamentos/Agendamentos.html">Agendamentos</a>  </li>
+            	<li><a href="../Agendamento/Agendamento.html">Agendamentos</a>  </li>
             	<li><a href="#">Serviços</a>  </li>
-            	<li><a href="../Consulta/Consulta.html">Consulta</a>  </li>
+            	<li><a href="../Consulta/Consulta.jsp">Consulta</a>  </li>
             </ul>
             <ul class="right">
             	<li><a href="../Login/Login.jsp">Login</a>  </li>
@@ -384,12 +384,6 @@ footer{
 				<a id="jatem" href="../Login/Login.jsp"> Já tem um conta? Então clique aqui!</a>
                     <br><br><br><br>
                 <input type="submit" id="entrar" value="Cadastrar">
-            </form>
-            
-            <form action="DeleteCadastro.jsp" >
-            
-            	<input type="submit" name="n123" id="entrar" value="2">
-            
             </form>
             
         </div>

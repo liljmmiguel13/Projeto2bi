@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+	
+	<%@ page import="java.sql.ResultSet"%>
+	<%@ page import="Dao.AgendamentoDao"%>
+	<%@ page import="Dao.PacienteDao"%>
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -204,12 +211,53 @@ footer{
         <li><a href="../Login/Login.jsp">Login</a>  </li>
         <li><a href="../Cadastro/Cadastro.jsp">Cadastro</a>  </li>
         </ul>
-    </div>
-</div>
-<div class="main">
+    	</div>
+	</div>
+	<div class="main">
+	<div class="table">
+		<div class="th">
+			<div class="td">Data</div>
+			<div class="td">Local de Morada</div>
+			<div class="td">Clinica</div>
+			<div class="td">Medico</div>
+			<div class="td">Tipo de Atendimento</div>
+			<div class="td">Nome do Paciente</div>
+		</div>
+	<%
+	int i;
+	
+	if (session.getAttribute("idpaciente") == null) {
+		response.sendRedirect("../site.html");
+		System.out.println("deu ruim menoh");
+	} else {
+		
+		
+		i = (Integer) session.getAttribute("idpaciente");
+		PacienteDao pacienteDao = new PacienteDao();
+		AgendamentoDao agendamentoDao = new AgendamentoDao();
+		ResultSet rsPaciente = pacienteDao.ExcuteQuery(i);
+		ResultSet rsAgendamento = agendamentoDao.ExcuteQuery(i);
+		rsPaciente.next();
+		
+	
+		while (rsAgendamento.next()) {%>
+			<div class="tr">
+				<div class="td"><%= rsAgendamento.getString("data") %></div>
+				<div class="td"><%= rsAgendamento.getString("localMorada") %></div>
+				<div class="td"><%= rsAgendamento.getString("clinica") %></div>
+				<div class="td"><%= rsAgendamento.getString("medico") %></div>
+				<div class="td"><%= rsAgendamento.getString("tipo_atendimento") %></div>
+				<div class="td"><%= rsPaciente.getString("nome") %></div>
+				<div class="td"><form action="../Agendamento/EdicaoAgendamento.jsp"><button type="submit" name="idconsulta" value="<%= rsAgendamento.getInt("idagendamento") %>">Editar Consulta</button></form></div>
+				<div class="td"><form action="../Agendamento/DeleteAgendamento.jsp"><button type="submit" name="idconsulta" value="<%= rsAgendamento.getInt("idagendamento") %>">Deletar Consulta</button></form></div>
+			</div>
+	<%	}
+	}%>
+	</div>
+	
     
    
-</div>
+	</div>
 </div>
 <footer>
    <div class="footer-content">

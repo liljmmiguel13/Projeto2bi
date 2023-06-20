@@ -6,7 +6,7 @@
 	
 	<%
 	if (session.getAttribute("idpaciente") == null) {
-		response.sendRedirect("../");
+		response.sendRedirect("../Login/Login");
 		System.out.println("deu ruim menoh");
 	} else {
 		
@@ -25,6 +25,6 @@
 	    
 		PacienteDao pacienteDao = new PacienteDao();
 		ok = pacienteDao.UpdatePaciente(paciente);
-		response.sendRedirect("../site.html");
+		response.sendRedirect("../Login/Login");
 	}
 	%>

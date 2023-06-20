@@ -14,6 +14,7 @@
     agendamento.setClinica(request.getParameter("clinica"));
     agendamento.setMedico(request.getParameter("medico"));
     agendamento.setTipo_atendimento(request.getParameter("tipo_atendimento"));
+    agendamento.setIdpaciente((Integer)session.getAttribute("idpaciente"));
     
     
 	AgendamentoDao agendamentoDao = new AgendamentoDao();

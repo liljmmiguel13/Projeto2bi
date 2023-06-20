@@ -268,7 +268,7 @@ footer{
              <nav>
                 <ul class="navbar-ul">
                 <li><a href="../site.html">Home</a>  </li>
-                <li><a href="../Agendamentos/Agendamentos.html">Agendamentos</a>  </li>
+                <li><a href="../Agendamento/Agendamento.html">Agendamentos</a>  </li>
                 <li><a href="#">Serviços</a>  </li>
                 <li><a href="../Consulta/Consulta.html">Consulta</a>  </li>
                 </ul>
