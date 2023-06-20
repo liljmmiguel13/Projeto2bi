@@ -267,15 +267,15 @@ footer{
 
              <nav>
                 <ul class="navbar-ul">
-                <li><a href="site.html">Home</a>  </li>
-                <li><a href="agendamentos.html">Agendamentos</a>  </li>
+                <li><a href="../site.html">Home</a>  </li>
+                <li><a href="../Agendamentos/Agendamentos.html">Agendamentos</a>  </li>
                 <li><a href="#">Serviços</a>  </li>
-                <li><a href="consulta.html">Consulta</a>  </li>
+                <li><a href="../Consulta/Consulta.html">Consulta</a>  </li>
                 </ul>
                 </nav>
                 <ul class="right">
-                <li><a class="active" href="login.html">Login</a>  </li>
-                <li><a  href="cadastro.html">Cadastro</a>  </li>
+                <li><a class="active" href="Login.jsp">Login</a>  </li>
+                <li><a  href="../Cadastro/Cadastro.jsp">Cadastro</a>  </li>
                 </ul>
         </div>
     </div>
