@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/agendamentos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Agendamentos</title>
     <script>
@@ -40,6 +39,184 @@
             document.querySelector('input[name="tipo_consulta"]:checked').checked = false;
         }
     </script>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+.page-container{
+    position: relative;
+    min-height: 100vh;
+}
+.content-wrap{
+    padding-bottom: 2.5rem;
+}
+body{
+  background-color: #bbb;
+}
+.main{
+    width: 100%;
+    background-color: #bbb;
+    margin-top: 29px;
+    margin-bottom: 21px;
+}
+
+.navbar{
+  width: 98vw;
+  height: 75px;
+  margin: 0;
+  display: flex;
+  z-index: 20;
+  position: sticky;
+}
+.menu{
+  border: 1px solid;
+  position: fixed;
+  width: 100%;
+  align-content: space-around;
+  background-color: white;
+}
+
+.logo{
+  color: red;
+  font-size: 41px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding-top: 0.5%;
+  float: left;
+  display: flex;
+}
+.right{
+  float: right;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    background-color: white;
+    
+}
+li{
+        border-right: 1px solid #bbb;
+        float: left;
+}
+li a {
+  width: fit-content;
+       display: block;
+       color: black;
+       text-align: center;
+       padding: 14px 16px;
+       text-decoration: none;
+}
+li a:hover:not(.active) {
+    background-color: gray;
+  }
+  .active {
+    background-color: #C51919;
+  }
+a{
+    font-size: 30px;
+      width: 105px; 
+      height: 47px ;
+       display: block;
+       padding: 0;
+}  
+#Escolhelugar select{
+  max-width: 5% ;
+  min-width: 5%;
+}
+#medico select{
+  max-width: 5%;
+  min-width: 5%;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+  background: #110c0b;
+  height: 2.5rem;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+.footer-content{
+    background-color: #110c0b;
+  text-align: center;
+}
+.footer-content h3{
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 3rem;
+}
+.footer-content p{
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+}
+.socials{
+  background-color: #110c0b;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 0 3rem 0;
+}
+.socials li{
+  color: black;
+}
+.socials a{
+  width: 6.6rem;
+  color: white;
+  text-decoration: none;
+}
+.socials a i{
+  font-size: 1.1rem;
+}
+.socials a:hover i{
+ color:aqua
+}
+.footer-bottom{
+    background-color: #110c0b;
+  width: auto;
+  text-align: center;
+}
+.footer-bottom p{
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+.footer-bottom span{
+  text-transform: uppercase;
+  opacity: .4;
+  font-weight: 200;
+}
+@media screen and (max-width: 778px) {
+  .navbar{
+    flex-direction: column;
+  }
+    .menu{
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  .navbar-ul{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+    .icon{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo{
+      text-align: center;
+    }
+    .main{
+      margin-top: 75px;
+    }
+}
+    </style>
 </head>
 <body>
     <div class="page-container">
