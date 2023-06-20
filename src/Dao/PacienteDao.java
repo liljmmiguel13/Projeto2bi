@@ -14,7 +14,7 @@ package Dao;
  			try {
  				
  				conn = new Conexao();
- 				conn.executeUpdate("INSERT INTO paciente(email, senha, nome, sexo, dt_nascimento, nacionalidade, cidade, estado, telefone) VALUES (" +
+ 				conn.executeUpdate("INSERT INTO paciente(email, senha, nome, sexo, dt_nascimento, nacionalidade, cidade, estado, telefone, nome_pai, nome_mae, telefone_emergencia, tipo_sangue) VALUES (" +
  						"'" + p.getEmail() + "',"  
  						+ "'" + p.getSenha() + "',"
  						+ "'"+ p.getNome() + "',"
@@ -23,7 +23,11 @@ package Dao;
  						+ "'" + p.getNacionalidade() + "'," 
  						+ "'" + p.getCidade() + "',"
  						+ "'" + p.getEstado() + "'," 
- 						+ "'" + p.getTelefone() + "');");
+ 						+ "'" + p.getTelefone() + "',"
+ 						+ "'" + p.getNome_pai() + "',"  
+ 						+ "'" + p.getNome_mae() + "',"
+ 						+ "'"+ p.getTelefone_emergencia() + "',"
+ 						+ "'" + p.getTipo_sangue() + "');");
  					
  					conn.fecharConexao();
  				
@@ -61,7 +65,7 @@ package Dao;
  			try {
  				
  				conn = new Conexao();
- 				ResultSet rs = conn.executeQuery("SELECT * FROM paciente(email, senha, nome, sexo, dt_nascimento, nacionalidade, cidade, estado, telefone) WHERE idpaciente = " + p.getIdpaciente() + ";");
+ 				ResultSet rs = conn.executeQuery("SELECT * FROM paciente(email, senha, nome, sexo, dt_nascimento, nacionalidade, cidade, estado, telefone, nome_pai, nome_mae, telefone_emergencia, tipo_sangue) WHERE idpaciente = " + p.getIdpaciente() + ";");
  				
  				conn.fecharConexao();
  				
@@ -90,8 +94,12 @@ package Dao;
  						+ "'nacionalidade' = " + p.getNacionalidade() + ","
  						+ "'cidade' = " + p.getCidade() + ","
  						+ "'estado' = " + p.getEstado() + ","
- 						+ "'telefone' = " + p.getTelefone() + 
-       "WHERE idpaciente = " + p.getIdpaciente() + ";");
+ 						+ "'telefone' = " + p.getTelefone() + ","
+ 						+ "'nome_pai' = " + p.getNome_pai() + ","
+ 						+ "'nome_mae' = " + p.getNome_mae() + ","
+ 						+ "'telefone_emergencia' = " + p.getTelefone_emergencia() + ","
+ 						+ "'tipo_sangue' = " + p.getTipo_sangue() + "," + 
+ 						"WHERE idpaciente = " + p.getIdpaciente() + ";");
  						
  				conn.fecharConexao();
  				
@@ -111,8 +119,8 @@ package Dao;
  			try {
  				conn = new Conexao();
  				ResultSet rs = conn.executeQuery("SELECT * FROM paciente WHERE email =\'" + email + "\' AND senha =\'" + senha + "\';");
- 				System.out.println("Login bem sucedido");
  				if(rs.next()) {
+ 					System.out.println("Login bem sucedido");
  					System.out.println("entrou");
  					return new Paciente(
  						rs.getInt("idpaciente"),
@@ -125,8 +133,10 @@ package Dao;
  						rs.getString("cidade"),
  						rs.getString("estado"),
  						rs.getString("telefone"),
- 						rs.getInt("codigo_info")
- 					);
+ 						rs.getString("nome_pai"),
+ 						rs.getString("nome_mae"),
+ 						rs.getString("telefone_emergencia"),
+ 						rs.getString("tipo_sangue"));
  				}else {
  					return null;
  				}
