@@ -214,6 +214,7 @@ footer{
     <div class="main">
         <h1>Editar Consulta</h1>
         <form action="EditaAgendamento.jsp" method="post">
+        <input hidden type="text" name="idconsulta" value="<%=request.getParameter("idconsulta")%>">
             <div class="cons_data">
                 <h2>Data</h2>
                 <div class="">
