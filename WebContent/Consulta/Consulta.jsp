@@ -164,6 +164,85 @@ footer{
 #form{
   height: fit-content;
 }
+.table{
+width: 100%;
+display: table;
+border-bottom: 1px solid black;
+}
+.table-header{
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	   display: table-header-group;
+background-color: red;
+font-weight: bold;
+font-size: 25px;
+}
+.table-header-cell{
+ text-align: center;
+ display: table-cell;
+padding: 10px;
+text-align: justify;
+border-bottom: 1px solid black;
+}
+.table-body{
+text
+display: table-row-group;
+background-color: white;
+}
+.table-row{
+display: table-row;
+text-align: center;
+}
+.table-body-cell{
+font-family: Arial, Helvetica, sans-serif;
+display: table-cell;
+border:1px solid black;
+padding-bottom:10px;
+padding-top:10px;
+}
+.button {
+  font-family:'Open Sans';
+  font-size: 16px;
+  font-weight:400;
+  display:inline-block;
+  color:#FFF;
+  border-radius: .25em;
+  text-shadow: -1px -1px 0px rgba(0,0,0,0.4);
+}
+
+.primary {
+  line-height:40px;
+  transition:ease-in-out .2s;
+  padding: 0 16px;
+}
+
+.primary:hover{
+  transform:scale(1.02);
+  box-shadow:2px 2px 5px rgba(0,0,0,0.20), inset 0 0 0 99999px rgba(0,0,0,0.2);
+}
+.edit:before, .delete:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  font-size:1rem;
+  padding-right:12px;
+  background:none;
+  color:#FFF;
+}
+.edit {
+  background: #3498db;
+  }
+  .edit:before {
+    content: "\f040";
+  }
+
+.delete {
+  background: #c0392b;
+  }
+  .delete:before {
+    content: "\f1f8";
+  
+}
+
   @media screen and (max-width: 778px) {
     .navbar{
       flex-direction: column;
@@ -214,15 +293,19 @@ footer{
     	</div>
 	</div>
 	<div class="main">
+	<div class="main">
 	<div class="table">
-		<div class="th">
-			<div class="td" >Data</div>
-			<div class="td">Local de Morada</div>
-			<div class="td">Clinica</div>
-			<div class="td">Medico</div>
-			<div class="td">Tipo de Atendimento</div>
-			<div class="td">Nome do Paciente</div>
+		<div class="table-header">
+			<div class="table-header-cell">Data</div>
+			<div class="table-header-cell">Local de Morada</div>
+			<div class="table-header-cell">Clinica</div>
+			<div class="table-header-cell">Medico</div>
+			<div class="table-header-cell">Tipo de Atendimento</div>
+			<div class="table-header-cell">Nome do Paciente</div>
+			<div class="table-header-cell"></div>
+			<div class="table-header-cell"></div>
 		</div>
+		<div class="table-body">
 	<%
 	int i;
 	
@@ -241,20 +324,22 @@ footer{
 		
 	
 		while (rsAgendamento.next()) {%>
-			<div class="tr">
-				<div class="td"><%= rsAgendamento.getString("data") %></div>
-				<div class="td"><%= rsAgendamento.getString("localMorada") %></div>
-				<div class="td"><%= rsAgendamento.getString("clinica") %></div>
-				<div class="td"><%= rsAgendamento.getString("medico") %></div>
-				<div class="td"><%= rsAgendamento.getString("tipo_atendimento") %></div>
-				<div class="td"><%= rsPaciente.getString("nome") %></div>
-				<div class="td"><form action="../Agendamento/EdicaoAgendamento.jsp"><button type="submit" name="idconsulta" value="<%= rsAgendamento.getInt("idagendamento") %>">Editar Consulta</button></form></div>
-				<div class="td"><form action="../Agendamento/DeleteAgendamento.jsp"><button type="submit" name="idconsulta" value="<%= rsAgendamento.getInt("idagendamento") %>">Deletar Consulta</button></form></div>
-			</div>
+			
+			<div class="table-row">
+				<div class="table-body-cell"><%= rsAgendamento.getString("data") %></div>
+				<div class="table-body-cell"><%= rsAgendamento.getString("localMorada") %></div>
+				<div class="table-body-cell"><%= rsAgendamento.getString("clinica") %></div>
+				<div class="table-body-cell"><%= rsAgendamento.getString("medico") %></div>
+				<div class="table-body-cell"><%= rsAgendamento.getString("tipo_atendimento") %></div>
+				<div class="table-body-cell"><%= rsPaciente.getString("nome") %></div>
+				<div class="table-body-cell"><form action="../Agendamento/EdicaoAgendamento.jsp"><button type="submit" name="idconsulta" class="button primary edit" value="<%= rsAgendamento.getInt("idagendamento") %>">Editar Consulta</button></form></div>
+				<div class="table-body-cell"><form action="../Agendamento/DeleteAgendamento.jsp"><button type="submit" name="idconsulta" class="button primary delete" value="<%= rsAgendamento.getInt("idagendamento") %>">Deletar Consulta</button></form></div>
+				</div>
+				
 	<%	}
 	}%>
 	</div>
-	
+	</div>
     
    
 	</div>
