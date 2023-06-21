@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
+
     pageEncoding="UTF-8"%>
 
     
@@ -101,7 +102,15 @@ a{
   max-width: 5%;
   min-width: 5%;
 }
-
+#consulta{
+background-color: #C51919;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 100%;
+}
 footer{
     position: absolute;
     bottom: 0;
@@ -163,6 +172,126 @@ footer{
   opacity: .4;
   font-weight: 200;
 }
+.agendamento{
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+      height: auto;
+    background-color: white;
+    position: relative;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+    }
+    .cons_data{
+      background-color: aliceblue;
+      border-radius: 15px;
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+    }
+    .cons_morada{
+      background-color: aliceblue;
+      border-radius: 15px;
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+    }
+    .cons_clinica{
+      background-color: aliceblue;
+      border-radius: 15px;
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+    }
+    .cons_medico{
+      background-color: aliceblue;
+      border-radius: 15px;
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+    }
+    .tipo_consulta{
+        display: inline-flex;
+        width: 400px;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 20px 15px;
+    }
+    .tipo_consulta .opcao{
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 10px;
+  border: 2px solid lightgrey;
+  transition: all 0.3s ease;
+}
+.tipo_consulta .opcao .ponto{
+  height: 20px;
+  width: 20px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  position: relative;
+}
+.tipo_consulta .opcao .ponto::before{
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background: #c51919;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all 0.3s ease;
+}
+input[type="radio"]{
+  display: none;
+}
+#presencial:checked:checked ~ .presencial,
+#online:checked:checked ~ .online{
+    border-color: #c51919;
+  background: #c51919;
+}
+#presencial:checked:checked ~ .presencial .ponto,
+#online:checked:checked ~ .online .ponto{
+    background: #fff;
+}
+#presencial:checked:checked ~ .presencial .ponto::before,
+#online:checked:checked ~ .online .ponto::before{
+opacity: 1;
+transform: scale(1);
+}
+.tipo_consulta .opcao span{
+    font-size: 20px;
+    color: #808080;
+}
+#presencial:checked:checked ~ .presencial span,
+#online:checked:checked ~ .online span{
+    color: #fff;
+}
+
 @media screen and (max-width: 778px) {
   .navbar{
     flex-direction: column;
@@ -188,6 +317,7 @@ footer{
     .main{
       margin-top: 75px;
     }
+    
 }
     </style>
 <body>
@@ -212,15 +342,12 @@ footer{
         </div>
     </div>
     <div class="main">
+    <div class ="agendamento">
         <h1>Editar Consulta</h1>
         <form action="EditaAgendamento.jsp" method="post">
         <input hidden type="text" name="idconsulta" value="<%=request.getParameter("idconsulta")%>">
-            <div class="cons_data">
-                <h2>Data</h2>
-                <div class="">
-                <label><b>Data: </b> </label>
-                <input type="date" name="data" required> <br>
-            </div>
+            <div class="cons_info">
+                
 
             <div class="cons_morada" >
                 <h2>Seu Local de Morada</h2>
@@ -262,12 +389,27 @@ footer{
             	
                 
             </div>
+            <div class="cons_data">
+              <h2>Data</h2>
+            <input type="date" name="data" required> <br>
+        </div>
             </div>
             <div class="tipo_consulta">
-                <input type="radio" name="tipo_atendimento" value="presencial">Presencial<input type="radio" name="tipo_atendimento" value="online">Online
-            </div>
-            <input type="submit" value="Editar Consulta">
+                <input type="radio" name="tipo_atendimento" value="presencial" id="presencial">
+                <input type="radio" name="tipo_atendimento" value="online" id="online">
+                <label for="presencial" class="opcao presencial">
+                    <div class="ponto"></div>
+                    <span>Presencial</span>
+                 </label>
+                
+                <label for="online" class="opcao online">
+                    <div class="ponto"></div> 
+                    <span>Online</span>
+                </label>
+                </div>
+            <input type="submit" id="consulta"value="Editar Consulta">
             </form>
+            </div>
     </div>
 </div>
     <footer>
