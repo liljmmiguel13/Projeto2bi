@@ -13,7 +13,7 @@
 		boolean ok = false;
 		
 		AgendamentoDao agendamentoDao = new AgendamentoDao();
-		Agendamento agendamento = agendamentoDao.getAgendamento((Integer) session.getAttribute("idpaciente")); 
+		Agendamento agendamento = agendamentoDao.getAgendamento(Integer.parseInt(request.getParameter("idconsulta"))); 
 	    agendamento.setData(request.getParameter("data"));
 	    agendamento.setLocalMorada(request.getParameter("localMorada"));
 	    agendamento.setClinica(request.getParameter("clinica"));
