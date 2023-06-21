@@ -216,7 +216,7 @@ footer{
 	<div class="main">
 	<div class="table">
 		<div class="th">
-			<div class="td">Data</div>
+			<div class="td" >Data</div>
 			<div class="td">Local de Morada</div>
 			<div class="td">Clinica</div>
 			<div class="td">Medico</div>
