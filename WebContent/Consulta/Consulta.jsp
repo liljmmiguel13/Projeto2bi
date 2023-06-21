@@ -185,7 +185,6 @@ text-align: justify;
 border-bottom: 1px solid black;
 }
 .table-body{
-text
 display: table-row-group;
 background-color: white;
 }
