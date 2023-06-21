@@ -269,8 +269,8 @@ footer{
                 <ul class="navbar-ul">
                 <li><a href="../site.html">Home</a>  </li>
                 <li><a href="../Agendamento/Agendamento.html">Agendamentos</a>  </li>
-                <li><a href="#">ServiÁos</a>  </li>
-                <li><a href="../Consulta/Consulta.html">Consulta</a>  </li>
+                <li><a href="#">Servi√ßos</a>  </li>
+                <li><a href="../Consulta/Consulta.jsp">Consulta</a>  </li>
                 </ul>
                 </nav>
                 <ul class="right">
@@ -294,7 +294,7 @@ footer{
                     <label for="senha" class="login_text"><b>Senha:</b> </label>
                 <input type="password"  class="login_senha" name="senha" required><br>
                 </div>
-                <a id="esquec" href="../Cadastro/Cadastro.jsp"> Esqueceu sua senha? Ent„o faz tudo de novo ai kkk</a><br> <br>
+                <a id="esquec" href="../Cadastro/Cadastro.jsp"> Esqueceu sua senha? Ent√£o clique aqui!</a><br> <br>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Lembre de mim
                 </label>
