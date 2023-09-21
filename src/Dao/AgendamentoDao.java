@@ -127,47 +127,6 @@ package Dao;
 		
 		//A Partir daqui começa as atualizações
 		
-		public Agendamento getAgendamentoEditado(int idagendamento) {
-			Conexao conn = null;
- 			
- 			try {
- 				
- 				conn = new Conexao();
- 				ResultSet rs = conn.executeQuery("SELECT * FROM agendamento WHERE idagendamento = " + idagendamento + ";");
- 				
- 				if(rs.next()) {
- 					return new Agendamento(
- 							rs.getString("data"),
- 							rs.getString("clinica"),
- 							rs.getString("tipo_atendimento"),
- 				}else {
- 					return null;
- 				}
- 				
- 			} catch(SQLException e) {
- 				
- 				return null;
- 			}
-		}
-		
-		public ResultSet ExcuteQuery(int idpaciente) {
- 			
- 			Conexao conn = null;
- 			
- 			try {
- 				
- 				conn = new Conexao();
- 				ResultSet rs = conn.executeQuery("SELECT * FROM agendamento WHERE idpaciente = " + idpaciente + ";");
- 				
- 				return rs;
- 				
- 			} catch(SQLException e) {
- 				
- 				return null;
- 			}
- 			
- 		}
-		
 		public boolean UpdateAgendamentoEditado(Agendamento a) {
  			
  			Conexao conn = null;
@@ -192,5 +151,8 @@ package Dao;
  				
  				return false;
  			}
+		}
+		
+		
 		
 }
