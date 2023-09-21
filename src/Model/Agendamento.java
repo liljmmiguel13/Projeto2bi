@@ -14,6 +14,13 @@ public class Agendamento {
 		
 	}
 	
+	public Agendamento (String data, String clinica, String tipo_atendimento) {
+		setData(data);
+		setClinica(clinica);
+		setTipo_atendimento(tipo_atendimento);
+		
+	}
+	
 	public Agendamento (String data, String localMorada, String clinica, String medico, String tipo_atendimento) {
 		setData(data);
 		setLocalMorada(localMorada);
