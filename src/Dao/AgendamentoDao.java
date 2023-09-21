@@ -1,6 +1,7 @@
 package Dao;
 
 	import java.sql.ResultSet;
+	import java.util.ArrayList;
 	import java.sql.SQLException;
 	import Model.Agendamento;
 	import Util.Conexao;
@@ -153,6 +154,41 @@ package Dao;
  			}
 		}
 		
+		public ArrayList<Agendamento> getConsulta(int idagendamento) {
+			Conexao conn = null;
+ 			
+ 			try {
+ 				
+ 				ArrayList<Agendamento> Consultas = new ArrayList<Agendamento>();
+ 				Agendamento agendamento =  null;
+ 				
+ 				
+ 				conn = new Conexao();
+ 				ResultSet rs = conn.executeQuery("SELECT * FROM agendamento;");
+ 				
+ 				while(rs.next()) {
+ 					
+ 					agendamento = new Agendamento(
+ 							rs.getInt("idagendamento"),
+ 							rs.getString("data"),
+ 							rs.getString("localMorada"),
+ 							rs.getString("clinica"),
+ 							rs.getString("medico"),
+ 							rs.getString("tipo_atendimento"),
+ 							rs.getInt("idpaciente")
+ 							);
+ 					
+ 					Consultas.add(agendamento);
+ 							
+ 				}
+ 				
+ 				return Consultas;
+ 				
+ 			} catch(SQLException e) {
+ 				
+ 				return null;
+ 				
+ 			}
 		
-		
+		}
 }
