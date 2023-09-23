@@ -4,6 +4,9 @@
 	<%@ page import="java.sql.ResultSet"%>
 	<%@ page import="Dao.AgendamentoDao"%>
 	<%@ page import="Dao.PacienteDao"%>
+	<%@ page import="Model.Paciente"%>
+	<%@ page import="Model.Agendamento"%>
+	<%@ page import="java.util.ArrayList"%>
 	
 <!DOCTYPE html>
 <html lang="en">
@@ -293,8 +296,18 @@ padding-top:10px;
 	</div>
 	<div class="main">
 	<div class="main">
-	<div class="table">
-		<div class="table-header">
+	<%
+		
+		PacienteDao pacienteDao = new PacienteDao();
+		AgendamentoDao agendamentoDao = new AgendamentoDao();
+		ArrayList<Paciente> pacientes = pacienteDao.getPacientes();
+		ArrayList<Agendamento> agendamentos;
+	
+		for (Paciente paciente : pacientes) {
+				
+	%>
+		<div class="table">
+		<div class="table-header" onclick="toggleConsultas(<%=paciente.getIdpaciente()%>)">
 			<div class="table-header-cell">Data</div>
 			<div class="table-header-cell">Local de Morada</div>
 			<div class="table-header-cell">Clinica</div>
@@ -304,35 +317,32 @@ padding-top:10px;
 			<div class="table-header-cell"></div>
 			<div class="table-header-cell"></div>
 		</div>
-		<div class="table-body">
-	<%
-	int i;
-	
-		i = (Integer) session.getAttribute("idpaciente");
-		PacienteDao pacienteDao = new PacienteDao();
-		AgendamentoDao agendamentoDao = new AgendamentoDao();
-		ResultSet rsPaciente = pacienteDao.ExcuteQuery(i);
-		ResultSet rsAgendamento = agendamentoDao.ExcuteQuery(i);
-		rsPaciente.next();
-		
-	
-		while (rsAgendamento.next()) {%>
-			
-			<div class="table-row">
-				<div class="table-body-cell"><%= rsAgendamento.getString("data") %></div>
-				<div class="table-body-cell"><%= rsAgendamento.getString("localMorada") %></div>
-				<div class="table-body-cell"><%= rsAgendamento.getString("clinica") %></div>
-				<div class="table-body-cell"><%= rsAgendamento.getString("medico") %></div>
-				<div class="table-body-cell"><%= rsAgendamento.getString("tipo_atendimento") %></div>
-				<div class="table-body-cell"><%= rsPaciente.getString("nome") %></div>
-				<div class="table-body-cell"><form action="../Agendamento/EdicaoAgendamento.jsp"><button type="submit" name="idconsulta" class="button primary edit" value="<%= rsAgendamento.getInt("idagendamento") %>">Editar Consulta</button></form></div>
-				<div class="table-body-cell"><form action="../Agendamento/DeleteAgendamento.jsp"><button type="submit" name="idconsulta" class="button primary delete" value="<%= rsAgendamento.getInt("idagendamento") %>">Deletar Consulta</button></form></div>
-				</div>
+		<div class="table-body" id="<%=paciente.getIdpaciente()%>" style="display:none;">
+			<% 
+			agendamentos = agendamentoDao.getAgendamentos(paciente.getIdpaciente());
+			for (Agendamento agendamento : agendamentos) {
 				
-	<%	}
+			
+			%>	
+			<div class="table-row">
+				<div class="table-body-cell"><%= agendamento.getData() %></div>
+				<div class="table-body-cell"><%= agendamento.getLocalMorada() %></div>
+				<div class="table-body-cell"><%= agendamento.getClinica() %></div>
+				<div class="table-body-cell"><%= agendamento.getMedico() %></div>
+				<div class="table-body-cell"><%= agendamento.getTipo_atendimento() %></div>
+				<div class="table-body-cell"><%= paciente.getNome() %></div>
+				<div class="table-body-cell"><form action="../Agendamento/EdicaoServico.jsp"><button type="submit" name="idconsulta" class="button primary edit" value="<%= agendamento.getIdagendamento() %>">Editar Consulta</button></form></div>
+				<div class="table-body-cell"><form action="../Agendamento/DeleteAgendamento.jsp"><button type="submit" name="idconsulta" class="button primary delete" value="<%= agendamento.getIdagendamento() %>">Deletar Consulta</button></form></div>
+			</div>
+			<% 
+			}
+			%>
+		</div>
+		</div>		
+		
+	<%
+	}
 	%>
-	</div>
-	</div>
     
    
 	</div>
@@ -361,5 +371,21 @@ padding-top:10px;
 </div>
 </footer>
 </div>
+
+<script>
+	
+	function toggleConsultas(idpaciente) {
+		let menu = document.getElementById(idpaciente);
+		
+		if (menu.style.display == "none") {
+			menu.style.display = "table-row-group";
+		
+		} else if (menu.style.display == "table-row-group") {
+			menu.style.display = "none";
+		}
+	}
+	
+</script>
+
 </body>
 </html>
