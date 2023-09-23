@@ -154,17 +154,17 @@ package Dao;
  			}
 		}
 		
-		public ArrayList<Agendamento> getConsulta(int idagendamento) {
+		public ArrayList<Agendamento> getAgendamentos(int idpaciente) {
 			Conexao conn = null;
  			
  			try {
  				
- 				ArrayList<Agendamento> Consultas = new ArrayList<Agendamento>();
+ 				ArrayList<Agendamento> agendamentos = new ArrayList<Agendamento>();
  				Agendamento agendamento =  null;
  				
  				
  				conn = new Conexao();
- 				ResultSet rs = conn.executeQuery("SELECT * FROM agendamento;");
+ 				ResultSet rs = conn.executeQuery("SELECT * FROM agendamento WHERE idpaciente =" + idpaciente + ";");
  				
  				while(rs.next()) {
  					
@@ -178,15 +178,16 @@ package Dao;
  							rs.getInt("idpaciente")
  							);
  					
- 					Consultas.add(agendamento);
+ 					agendamentos.add(agendamento);
  							
  				}
  				
- 				return Consultas;
+ 				return agendamentos;
  				
  			} catch(SQLException e) {
  				
- 				return null;
+ 				System.out.print("erro ao pegar os agendamentos");
+ 	            return new ArrayList<Agendamento>();
  				
  			}
 		
