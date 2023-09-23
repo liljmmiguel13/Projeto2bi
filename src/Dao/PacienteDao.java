@@ -1,8 +1,12 @@
  package Dao;
 
  import java.sql.ResultSet;
+
  import java.sql.SQLException;
- import Model.Paciente;
+import java.util.ArrayList;
+
+import Model.Agendamento;
+import Model.Paciente;
  import Util.Conexao;
 
  	public class PacienteDao {
@@ -143,5 +147,52 @@
  				return null;
  			}
  		}
+ 		
+ 		public ArrayList<Paciente> getPacientes() {
+			
+ 			Conexao conn = null;
+ 			
+ 			try {
+ 				
+ 				ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
+ 				Paciente paciente =  null;
+ 				
+ 				
+ 				conn = new Conexao();
+ 				ResultSet rs = conn.executeQuery("SELECT * FROM paciente;");
+ 				
+ 				while(rs.next()) {
+ 					
+ 					paciente = new Paciente(
+ 							rs.getInt("idpaciente"),
+ 							rs.getString("email"),
+ 							rs.getString("senha"),
+ 							rs.getString("nome"),
+ 							rs.getString("sexo"),
+ 							rs.getString("dt_nascimento"),
+ 							rs.getString("nacionalidade"),
+ 							rs.getString("cidade"),
+ 							rs.getString("estado"),
+ 							rs.getString("telefone"),
+ 							rs.getString("nome_pai"),
+ 							rs.getString("nome_mae"),
+ 							rs.getString("telefone_emergencia"),
+ 							rs.getString("tipo_sangue")
+ 							);
+ 					
+ 					pacientes.add(paciente);
+ 							
+ 				}
+ 				
+ 				return pacientes;
+ 				
+ 			} catch(SQLException e) {
+ 				
+ 				System.out.print("erro ao pegar os pacientes");
+ 	            return new ArrayList<Paciente>();
+ 				
+ 			}
+		
+		}
  		
  	}
