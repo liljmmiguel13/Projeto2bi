@@ -103,6 +103,19 @@ a{
        display: block;
        padding: 0;
 }
+#appearance-select {
+ -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat #eeeeee;
+    background-position: 218px center;
+    text-align:center;
+    width: 80px;
+    height: 30px;
+    border: 1px solid #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:18px
+}
 footer{
     position: absolute;
     bottom: 0;
@@ -295,19 +308,29 @@ padding-top:10px;
     	</div>
 	</div>
 	<div class="main">
-	<div class="main">
-	<%
-		
-		PacienteDao pacienteDao = new PacienteDao();
-		AgendamentoDao agendamentoDao = new AgendamentoDao();
-		ArrayList<Paciente> pacientes = pacienteDao.getPacientes();
-		ArrayList<Agendamento> agendamentos;
-	
+		<%
+			PacienteDao pacienteDao = new PacienteDao();
+			AgendamentoDao agendamentoDao = new AgendamentoDao();
+			ArrayList<Paciente> pacientes = pacienteDao.getPacientes();
+			ArrayList<Agendamento> agendamentos;
+		%>
+	<label for="paciente" style="text-size:50px">Nome do Paciente:</label>
+	<select id="appearance-select" name="paciente">
+	<option selected hidden value=""></option>
+	<% 
 		for (Paciente paciente : pacientes) {
-				
 	%>
-		<div class="table">
-		<div class="table-header" onclick="toggleConsultas(<%=paciente.getIdpaciente()%>)">
+	
+	<option onclick="toggleConsultas(<%=paciente.getIdpaciente()%>)"><%= paciente.getNome() %></option>
+	<%
+	} 
+	%>
+	</select>
+	<input style="background-color:#C51919;" class="primary button" type="button" onclick="toggleAll()" value="Mostrar Todos">
+	
+	<input style="background-color:#C51919;" class="primary button" type="button" onclick="hideAll()" value="Mostrar Nenhum">
+	<div class="table">
+		<div class="table-header">
 			<div class="table-header-cell">Data</div>
 			<div class="table-header-cell">Local de Morada</div>
 			<div class="table-header-cell">Clinica</div>
@@ -317,6 +340,12 @@ padding-top:10px;
 			<div class="table-header-cell"></div>
 			<div class="table-header-cell"></div>
 		</div>
+	
+		<% 
+		for (Paciente paciente : pacientes) {
+				
+	%>
+		
 		<div class="table-body" id="<%=paciente.getIdpaciente()%>" style="display:none;">
 			<% 
 			agendamentos = agendamentoDao.getAgendamentos(paciente.getIdpaciente());
@@ -338,13 +367,13 @@ padding-top:10px;
 			}
 			%>
 		</div>
-		</div>		
+			
 		
 	<%
 	}
 	%>
     
-   
+   </div>	
 	</div>
 </div>
 <footer>
@@ -384,7 +413,18 @@ padding-top:10px;
 			menu.style.display = "none";
 		}
 	}
-	
+	function toggleAll(){
+		let todos = document.getElementsByClassName('table-body')
+		for(let i=0; i<todos.length;i++){
+		todos[i].style.display = "table-row-group"
+		}
+	}
+	function hideAll(){
+		let todos = document.getElementsByClassName('table-body')
+		for(let i=0; i<todos.length;i++){
+		todos[i].style.display = "none"
+		}
+	}
 </script>
 
 </body>
