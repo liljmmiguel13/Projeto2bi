@@ -328,7 +328,7 @@ padding-top:10px;
 	</select>
 	<input style="background-color:#C51919;" class="primary button" type="button" onclick="toggleAll()" value="Mostrar Todos">
 	
-	<input style="background-color:#C51919;" class="primary button" type="button" onclick="hideAll()" value="Mostrar Nenhum">
+	<input style="background-color:#C51919;" class="primary button" type="button" onclick="hideAll()" value="Esconder Todos">
 	<div class="table">
 		<div class="table-header">
 			<div class="table-header-cell">Data</div>
