@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+
+    pageEncoding="UTF-8"%>
+
+    
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,16 +23,14 @@ padding: 0;
     min-height: 100vh;
 }
 .content-wrap{
-background-position: center;
-    background-size: cover;
-background-image: url(../Img/estrutura-clinica.jpg);
-    padding-bottom: 14.5rem;
+    padding-bottom: 2.5rem;
 }
 body{
   background-color: #bbb;
 }
 .main{
     width: 100%;
+    background-color: #bbb;
     margin-top: 29px;
     margin-bottom: 21px;
 }
@@ -329,7 +332,7 @@ transform: scale(1);
             <ul class="navbar-ul">
                 <li><a href="../site.html">Home</a>  </li>
                 <li><a class="active" href="Agendamento.html">Agendamentos</a>  </li>
-                <li><a href="../Servicos/Servicos.jsp">Serviços</a>  </li>
+                <li><a href="#">Serviços</a>  </li>
                 <li><a href="../Consulta/Consulta.jsp">Consulta</a>  </li>
             </ul>
             <ul class="right">
@@ -339,10 +342,12 @@ transform: scale(1);
         </div>
     </div>
     <div class="main">
-      <div class="agendamento">
-        <h1>Agendamentos</h1>
-        <form action="RespostaAgendamento.jsp" method="post">
+    <div class ="agendamento">
+        <h1>Editar Consulta</h1>
+        <form action="EditaAgendamento.jsp" method="post">
+        <input hidden type="text" name="idconsulta" value="<%=request.getParameter("idconsulta")%>">
             <div class="cons_info">
+                
 
             <div class="cons_morada" >
                 <h2>Seu Local de Morada</h2>
@@ -388,7 +393,6 @@ transform: scale(1);
               <h2>Data</h2>
             <input type="date" name="data" required> <br>
         </div>
-
             </div>
             <div class="tipo_consulta">
                 <input type="radio" name="tipo_atendimento" value="presencial" id="presencial">
@@ -402,11 +406,10 @@ transform: scale(1);
                     <div class="ponto"></div> 
                     <span>Online</span>
                 </label>
-                
-            </div>
-            <input type="submit" id="consulta" value="Marcar Consulta">
+                </div>
+            <input type="submit" id="consulta"value="Editar Consulta">
             </form>
-      </div>
+            </div>
     </div>
 </div>
     <footer>

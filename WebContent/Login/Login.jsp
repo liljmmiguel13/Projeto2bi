@@ -21,6 +21,9 @@
   min-height: 100vh;
 }
 .content-wrap{
+background-position: center;
+    background-size: cover;
+background-image: url(../Img/posto-de-enfermagem.jpg);
   padding-bottom: 6.5rem;
 }
 body{
@@ -29,7 +32,6 @@ body{
 .main{
   background-attachment:fixed;
     width: 100%;
-    background-color: #bbb;
     background-position: center;
     background-size: cover;
     height: fit-content; 
@@ -259,6 +261,8 @@ footer{
     </style>
     
 <body>
+<div class="page-container">
+        <div class="content-wrap">
     <div class="navbar">
         <div class="menu"> 
             <div class="icon">
@@ -268,9 +272,9 @@ footer{
              <nav>
                 <ul class="navbar-ul">
                 <li><a href="../site.html">Home</a>  </li>
-                <li><a href="../Agendamentos/Agendamentos.html">Agendamentos</a>  </li>
-                <li><a href="#">Serviços</a>  </li>
-                <li><a href="../Consulta/Consulta.html">Consulta</a>  </li>
+                <li><a href="../Agendamento/Agendamento.html">Agendamentos</a>  </li>
+                <li><a href="../Servicos/Servicos.jsp">Serviços</a>  </li>
+                <li><a href="../Consulta/Consulta.jsp">Consulta</a>  </li>
                 </ul>
                 </nav>
                 <ul class="right">
@@ -294,7 +298,7 @@ footer{
                     <label for="senha" class="login_text"><b>Senha:</b> </label>
                 <input type="password"  class="login_senha" name="senha" required><br>
                 </div>
-                <a id="esquec" href="../Cadastro/Cadastro.jsp"> Esqueceu sua senha? Então faz tudo de novo ai kkk</a><br> <br>
+                <a id="esquec" href="../Cadastro/Cadastro.jsp"> Esqueceu sua senha? Então clique aqui!</a><br> <br>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Lembre de mim
                 </label>
@@ -311,6 +315,7 @@ footer{
             %>
             
         </div>
+    </div>
     </div>
     <footer>
        <div class="footer-content">
@@ -335,5 +340,6 @@ footer{
     <p>&copy;2023 Cardio. designed by <span>Rodrifer2004</span> Todos os direitos reservados</p>
  </div>
     </footer>
+    </div>
 </body>
 </html>

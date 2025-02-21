@@ -1,8 +1,12 @@
-package Dao;
+ package Dao;
 
  import java.sql.ResultSet;
+
  import java.sql.SQLException;
- import Model.Paciente;
+import java.util.ArrayList;
+
+import Model.Agendamento;
+import Model.Paciente;
  import Util.Conexao;
 
  	public class PacienteDao {
@@ -58,16 +62,14 @@ package Dao;
  			
  		}
  		
- 		public ResultSet ExcuteQuery(Paciente p) {
+ 		public ResultSet ExcuteQuery(int idpaciente) {
  			
  			Conexao conn = null;
  			
  			try {
  				
  				conn = new Conexao();
- 				ResultSet rs = conn.executeQuery("SELECT * FROM paciente(email, senha, nome, sexo, dt_nascimento, nacionalidade, cidade, estado, telefone, nome_pai, nome_mae, telefone_emergencia, tipo_sangue) WHERE idpaciente = " + p.getIdpaciente() + ";");
- 				
- 				conn.fecharConexao();
+ 				ResultSet rs = conn.executeQuery("SELECT * FROM paciente WHERE idpaciente = " + idpaciente + ";");
  				
  				return rs;
  				
@@ -137,7 +139,7 @@ package Dao;
  						rs.getString("nome_mae"),
  						rs.getString("telefone_emergencia"),
  						rs.getString("tipo_sangue"));
- 				}else {
+ 				} else {
  					return null;
  				}
  			}catch(SQLException e) {
@@ -146,4 +148,51 @@ package Dao;
  			}
  		}
  		
+ 		public ArrayList<Paciente> getPacientes() {
+			
+ 			Conexao conn = null;
+ 			
+ 			try {
+ 				
+ 				ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
+ 				Paciente paciente =  null;
+ 				
+ 				
+ 				conn = new Conexao();
+ 				ResultSet rs = conn.executeQuery("SELECT * FROM paciente;");
+ 				
+ 				while(rs.next()) {
+ 					
+ 					paciente = new Paciente(
+ 							rs.getInt("idpaciente"),
+ 							rs.getString("email"),
+ 							rs.getString("senha"),
+ 							rs.getString("nome"),
+ 							rs.getString("sexo"),
+ 							rs.getString("dt_nascimento"),
+ 							rs.getString("nacionalidade"),
+ 							rs.getString("cidade"),
+ 							rs.getString("estado"),
+ 							rs.getString("telefone"),
+ 							rs.getString("nome_pai"),
+ 							rs.getString("nome_mae"),
+ 							rs.getString("telefone_emergencia"),
+ 							rs.getString("tipo_sangue")
+ 							);
+ 					
+ 					pacientes.add(paciente);
+ 							
+ 				}
+ 				
+ 				return pacientes;
+ 				
+ 			} catch(SQLException e) {
+ 				
+ 				System.out.print("erro ao pegar os pacientes");
+ 	            return new ArrayList<Paciente>();
+ 				
+ 			}
+		
+		}
+ 	
  	}

@@ -2,31 +2,31 @@
 	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 	
-	
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>Cadastro - Portal do Paciente</title>
-</head>
-<script>
-    function ValidaSenha(){
-        const senha = document.querySelector('input[name=senha]');
-        const confirma = document.querySelector('input[name=confirma]');
-        if(senha.value === confirma.value){
-            document.getElementById('resultado').style.color = "#008B45";
-            document.getElementById('resultado').innerHTML = "As senhas são iguais";
-            confirma.setCustomValidity('');
-        }else{
-            document.getElementById('resultado').style.color = "#FF6347";
-            document.getElementById('resultado').innerHTML = "as senhas não correspondem";
-            confirma.setCustomValidity('as senhas não correspondem');
+
+	<!DOCTYPE html>
+	<html lang="pt-br">
+	<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Cadastro - Portal do Paciente</title>
+    </head>
+    <script>
+        function ValidaSenha(){
+            const senha = document.querySelector('input[name=senha]');
+            const confirma = document.querySelector('input[name=confirma]');
+            if(senha.value === confirma.value){
+                document.getElementById('resultado').style.color = "#008B45";
+                document.getElementById('resultado').innerHTML = "As senhas são iguais";
+                confirma.setCustomValidity('');
+            }else{
+                document.getElementById('resultado').style.color = "#FF6347";
+                document.getElementById('resultado').innerHTML = "as senhas não correspondem";
+                confirma.setCustomValidity('as senhas não correspondem');
+            }
         }
-    }
-    
+
 </script>
 
 <style>
@@ -39,6 +39,9 @@ position: relative;
 min-height: 100vh;
 }
 .content-wrap{
+ background-position: center;
+    background-size: cover;
+background-image: url(../Img/internacao-involuntaria.jpg);
 padding-bottom: 6.5rem;
 }
 body{
@@ -47,7 +50,6 @@ background-color: #bbb;
 .main{
 background-attachment:fixed;
 width: 100%;
-background-color: #bbb;
 background-position: center;
 background-size: cover;
 height: fit-content; 
@@ -353,9 +355,11 @@ transform: scale(1);
   }
 }
 </style>
-
+    
 
 <body>
+<div class="page-container">
+        <div class="content-wrap">
 <div class="navbar">
     <div class="menu"> 
         <div class="icon">
@@ -363,9 +367,9 @@ transform: scale(1);
         </div>
         <ul class="navbar-ul">
            <li><a href="../site.html">Home</a>  </li>
-            <li><a href="../Agendamentos/Agendamentos.html">Agendamentos</a>  </li>
-            <li><a href="#">Serviços</a>  </li>
-            <li><a href="../Consulta/Consulta.html">Consulta</a>  </li>
+            <li><a href="../Agendamento/Agendamento.html">Agendamentos</a>  </li>
+            <li><a href="../Servicos/Servicos.jsp">Serviços</a>  </li>
+            <li><a href="../Consulta/Consulta.jsp">Consulta</a>  </li>
         </ul>
         <ul class="right">
             <li><a href="../Login/Login.jsp">Login</a>  </li>
@@ -488,14 +492,10 @@ transform: scale(1);
                 <br><br><br><br>
             <input type="submit" id="entrar" value="Cadastrar">
         </form>
-        <form action="DeleteCadastro.jsp" >
-            
-            <input type="submit" name="n123" id="entrar" value="1">
-        
-        </form>
-    </div>
-</div>
-<footer>
+    	</div>
+	</div>
+	</div>
+	<footer>
    <div class="footer-content">
     <h3>Sobre o Site</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -518,5 +518,6 @@ transform: scale(1);
 <p>&copy;2023 Cardio. designed by <span>Rodrifer2004</span> Todos os direitos reservados</p>
 </div>
 </footer>
+</div>
 </body>
 </html>

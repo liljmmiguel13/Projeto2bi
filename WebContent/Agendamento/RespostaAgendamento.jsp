@@ -1,4 +1,4 @@
-	<%@page import="Dao.AgendamentoDao"%>
+  <%@page import="Dao.AgendamentoDao"%>
 	<%@page import="Model.Agendamento"%>
 
 	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -14,6 +14,7 @@
     agendamento.setClinica(request.getParameter("clinica"));
     agendamento.setMedico(request.getParameter("medico"));
     agendamento.setTipo_atendimento(request.getParameter("tipo_atendimento"));
+    agendamento.setIdpaciente((Integer)session.getAttribute("idpaciente"));
     
     
 	AgendamentoDao agendamentoDao = new AgendamentoDao();
@@ -32,4 +33,3 @@
 	window.location.href="Cadastro.jsp";
 	</script>
 	<%} %>
-	
