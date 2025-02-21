@@ -30,7 +30,7 @@
 		
 	%>
 	<script type="text/javascript">
-	alert("Paciente Cadastrado Com Sucesso! Agora preencha o Formulário de Saúde!");
+	alert("Paciente Cadastrado Com Sucesso! Agora preencha o FormulÃ¡rio de SaÃºde!");
 	window.location.href="../site.html";
 	</script>
 	<%}else{ %>

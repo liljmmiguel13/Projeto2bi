@@ -1,4 +1,4 @@
-	<%@page import="Dao.AgendamentoDao"%>
+  <%@page import="Dao.AgendamentoDao"%>
 	<%@page import="Model.Agendamento"%>
 
 	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -33,4 +33,3 @@
 	window.location.href="Cadastro.jsp";
 	</script>
 	<%} %>
-	
