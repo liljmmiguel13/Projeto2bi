@@ -1,4 +1,0 @@
-mostrar os resultados na tela
-
-adequar o edit
-adequar o delete
